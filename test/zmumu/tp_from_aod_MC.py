@@ -107,7 +107,7 @@ process.load("MuonAnalysis.TagAndProbe.common_modules_cff")
 
 process.tagMuons = cms.EDFilter("PATMuonSelector",
     src = cms.InputTag("patMuonsWithTrigger"),
-    cut = cms.string("pt > 15 && "+MuonIDFlags.Tight2012.value()+
+    cut = cms.string("pt > 15 && passed(8)"+
                      " && pfIsolationR04().sumChargedHadronPt/pt < 0.2"),
 )
 if TRIGGER != "SingleMu":
